@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- html5shiv.js -->
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<!-- 제이쿼리 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- 네이버지도 web api-->	
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=dSYYiZSuFDheNVDlwDoY&submodules=geocoder"></script>
+	
+	<link rel="stylesheet" href="http://blak080.dothome.co.kr/project/css/common/common.css">
+
+	  <!-- 메뉴효과 show 스크립트 -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".menu ul li").mouseover(function(){
+				$(".menu_bar").show(100);
+			})
+			$("#header").mouseleave(function(){
+				$(".menu_bar").hide(10);
+			})
+		});	
+	</script>
+
+	<style>
+		
+		#content .banner{
+			height:300px;
+		}
+		.container{
+			width:1200px; 
+			margin: 0 auto;
+			overflow:hidden;
+		}
+		.box ul{ 
+			padding-top:20px;
+			width:400px;
+			margin:auto;
+			height:100px;
+		}
+		.box ul li{
+			width:100px;
+			height:60px;
+			line-height:60px;
+			text-align:center;
+			border:1px solid black;
+			padding:10px;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<h1 class="logo"><a href="index.html">로고</a></h1>
+		<div class="head">
+			<div class="menu">
+				<ul>
+					<li><a href="reservation.html">About</a></li>
+					<li><a href="useindex.html">Room View</a></li>
+					<li><a href="#">Reservation</a></li>
+					<li><a href="#">Tour</a></li>
+					<li><a href="#">Community</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="menu_bar1">
+			<div class="menu_bar">
+					<ul>
+						<li><a href="#">펜션소개</a></li>
+						<li><a href="#">데이지</a></li>
+						<li><a href="#">예약안내</a></li>
+						<li><a href="#">맛집</a></li>
+						<li><a href="#">공지사항</a></li>
+						<li><a href="reservation.html">오시는길</a></li>
+						<li><a href="RoomView.html">수선화</a></li>
+						<li><a href="#">실시간예약</a></li>
+						<li><a href="#">여행지</a></li>
+						<li><a href="#">이용후기</a></li>
+						<li><a href="#">인사</a></li>
+						<li><a href="#">　</a></li>
+						<li><a href="#">　</a></li>
+						<li><a href="#">　</a></li>
+						<li><a href="#">예약하기</a></li>							
+					</ul>
+				</div>
+		</div>
+		<div class="gnb">
+			<ul>
+				<li><a href="#">펜션소개</a></li>
+				<li><a href="#">고객센터</a></li>
+				<li><a href="#">로그인</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="content">
+		<div class="banner">
+			<img src="http://ps1027.shiningcorp.com//sh_img/hd/sub_main_banner/sub_main_banner.jpg" height="100%" width="100%">
+		</div>		
+		<div class="box" style="margin-bottom:30px; width:70%; margin: 0 auto;">
+			<ul>
+				<li><a href="">펜션소개</a></li>
+				<li><a href="">펜션둘러보기</a></li>
+				<li><a href="">오시는 길</a></li>
+			</ul>
+		</div>
+		<div id="map" style="width:70%;height:700px; margin: 0 auto; margin-bottom:100px;">
+			<script>
+			  var map = new naver.maps.Map('map');
+			  var myaddress = '테헤란로';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
+			  naver.maps.Service.geocode({address: myaddress}, function(status, response) {
+				  if (status !== naver.maps.Service.Status.OK) {
+					  return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
+				  }
+				  var result = response.result;
+				  // 검색 결과 갯수: result.total
+				  // 첫번째 결과 결과 주소: result.items[0].address
+				  // 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
+				  var myaddr = new naver.maps.Point(result.items[0].point.x, result.items[0].point.y);
+				  map.setCenter(myaddr); // 검색된 좌표로 지도 이동
+				  // 마커 표시
+				  var marker = new naver.maps.Marker({
+					position: myaddr,
+					map: map
+				  });
+				  // 마커 클릭 이벤트 처리
+				  naver.maps.Event.addListener(marker, "click", function(e) {
+					if (infowindow.getMap()) {
+						infowindow.close();
+					} else {
+						infowindow.open(map, marker);
+					}
+				  });
+				  // 마크 클릭시 인포윈도우 오픈
+				  var infowindow = new naver.maps.InfoWindow({
+					  content: '<h4> [네이버 개발자센터]</h4><a href="https://developers.naver.com" target="_blank"><img src="https://developers.naver.com/inc/devcenter/images/nd_img.png"></a>'
+				  });
+			  });
+			  </script>
+		</div>
+		<div id="footer">
+			<div class="foot">
+				<p>Copyright 2018.All rights reserved.</p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

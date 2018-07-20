@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- html5shiv.js -->
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<!-- 제이쿼리 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="http://blak080.dothome.co.kr/project/css/common/common2.css">
+	  <!-- 메뉴효과 show 스크립트 -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".menu ul li").mouseover(function(){
+				$(".menu_bar").show(100);
+			})
+			$("#header").mouseleave(function(){
+				$(".menu_bar").hide(10);
+			})
+		});	
+	</script>
+
+	<style>
+		
+		.box ul{ 
+			padding-top:20px;
+			width:400px;
+			margin:auto;
+			height:100px;
+		}
+		.box ul li{
+			width:100px;
+			height:60px;
+			line-height:60px;
+			text-align:center;
+			border:1px solid black;
+			padding:10px;
+		}
+		.view{
+			width:70%;
+			margin: 0 auto;
+			overflow:hideen;
+			margin-bottom:200px;
+		}		
+		.view .in_box{
+			overflow:hidden;
+			width:90%; 
+			margin: 0 auto;
+			height:240px;
+			border:1px solid #eee; 
+			padding-left:10px;
+			padding-top:10px;
+			margin-bottom:20px;
+		}
+		.in_box_img{
+			float:left;
+			z-index:2;
+		}
+		.in_right_box{
+			margin-left:400px;
+		}
+		.click{
+			border:1px solid black; 
+			width:30%; 
+			height:30px; 
+			line-height:30px; 
+			text-align:center;  
+			font-size:16px; 
+			background-color:#eee;
+			display:block;
+		}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<h1 class="logo"><a href="index.html">로고</a></h1>
+		<div class="head">
+			<div class="menu">
+				<ul>
+					<li><a href="reservation.html">About</a></li>
+					<li><a href="useindex.html">Room View</a></li>
+					<li><a href="#">Reservation</a></li>
+					<li><a href="#">Tour</a></li>
+					<li><a href="#">Community</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="menu_bar1">
+			<div class="menu_bar">
+					<ul>
+						<li><a href="#">펜션소개</a></li>
+						<li><a href="#">데이지</a></li>
+						<li><a href="#">예약안내</a></li>
+						<li><a href="#">맛집</a></li>
+						<li><a href="#">공지사항</a></li>
+						<li><a href="reservation.html">오시는길</a></li>
+						<li><a href="RoomView.html">수선화</a></li>
+						<li><a href="#">실시간예약</a></li>
+						<li><a href="#">여행지</a></li>
+						<li><a href="#">이용후기</a></li>
+						<li><a href="#">인사</a></li>
+						<li><a href="#">　</a></li>
+						<li><a href="#">　</a></li>
+						<li><a href="#">　</a></li>
+						<li><a href="#">예약하기</a></li>							
+					</ul>
+				</div>
+			</div>
+		<div class="gnb">
+			<ul>
+				<li><a href="#">펜션소개</a></li>
+				<li><a href="#">고객센터</a></li>
+				<li><a href="#">로그인</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="content">
+		<div class="banner">
+			<img src="http://ps1027.shiningcorp.com//sh_img/hd/sub_main_banner/sub_main_banner.jpg"width="100%" height="100%" >
+		</div>
+		<div class="box" style="margin-bottom:30px; width:70%; margin: 0 auto;">
+			<ul>
+				<li><a href="Room/Dage.html">데이지</a></li>
+				<li><a href="Room/Bi.html">바이올렛</a></li>
+				<li><a href="Room/Su.html">수선화</a></li>
+			</ul>
+		</div>
+		<div class="view">
+			<div class="in_box">
+				<div class="in_box_img"><img src="http://ps1027.shiningcorp.com/data/file/room/thumb-1935566037_ZNmkrwX0_1_379x230.jpg"></div>
+				<div class="in_right_box">
+					<h3>데이지</h3>
+					<pre>여유로운 Healing을 위한 Couple Room</pre>
+					<p><b>스타일</b> | 커플룸,제트스파</p>
+					<p><b>인원(기준/최대)</b> | 2명/4명</p>				<p><b>크기</b> | 10평형</p>
+					<form action="Room/Dage.html"><input type="submit" value="바로가기" class="click" /></form>
+				</div>
+
+			</div>
+			<div class="in_box">
+				<div class="in_box_img" ><img src="http://ps1027.shiningcorp.com/data/file/room/thumb-1935566037_cdw29QXr_1_379x230.jpg"></div>
+					<div class="in_right_box">
+					<h3>바이올렛</h3>
+					<pre>여유로운 Healing을 위한 Couple Room</pre>
+					<p><b>스타일</b> | 커플룸,제트스파</p>
+					<p><b>인원(기준/최대)</b> | 2명/4명</p>				<p><b>크기</b> | 10평형</p>
+					<form action="Room/Bi.html"><input type="submit" value="바로가기" class="click" /></form>
+				</div>
+			</div>
+			<div class="in_box">
+				<div class="in_box_img"><img src="http://ps1027.shiningcorp.com/data/file/room/thumb-1935566037_L61QKkVF_1_379x230.jpg"></div>
+				<div class="in_right_box">
+					<h3>민들레</h3>
+					<pre>여유로운 Healing을 위한 Couple Room</pre>
+					<p><b>스타일</b> | 커플룸,제트스파</p>
+					<p><b>인원(기준/최대)</b> | 2명/4명</p>				<p><b>크기</b> | 10평형</p>
+					<form action="Room/Min.html"><input type="submit" value="바로가기" class="click" /></form>
+				</div>
+			</div>
+			<div class="in_box">
+				<div class="in_box_img"><img src="http://ps1027.shiningcorp.com/data/file/room/thumb-1935566037_2mfwUk7R_1_379x230.jpg"></div>
+				<div class="in_right_box">
+					<h3>수선화</h3>
+					<pre>여유로운 Healing을 위한 Couple Room</pre>
+					<p><b>스타일</b> | 커플룸,제트스파</p>
+					<p><b>인원(기준/최대)</b> | 2명/4명</p>				<p><b>크기</b> | 10평형</p>
+					<form action="Room/Su.html"><input type="submit" value="바로가기" class="click" /></form>
+				</div>
+			</div>
+			<div class="in_box">
+				<div class="in_box_img"><img src="http://ps1027.shiningcorp.com/data/file/room/thumb-1935566037_noPgEiD8_1_379x230.jpg"></div>
+				<div class="in_right_box">
+					<h3>아이리스</h3>
+					<pre>여유로운 Healing을 위한 Couple Room</pre>
+					<p><b>스타일</b> | 커플룸,제트스파</p>
+					<p><b>인원(기준/최대)</b> | 2명/4명</p>	<p><b>크기</b> | 10평형</p>
+					<form action="Room/I.html"><input type="submit" value="바로가기" class="click" /></form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="foot">
+			<p>Copyright 2018.All rights reserved.</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
